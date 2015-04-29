@@ -1,0 +1,9 @@
+services:
+    acme.view_handler:
+        class: Acme\UserBundle\View\ViewHandler
+        arguments: [%fos_rest.formats%, %fos_rest.failed_validation%, %fos_rest.empty_content%, %fos_rest.serialize_null%, %fos_rest.force_redirects%, %fos_rest.default_engine%]
+        calls:
+            - [setContainer, ['@service_container']]
+            - [setExclusionStrategyGroups, [%fos_rest.serializer.exclusion_strategy.groups%]]
+            - [setExclusionStrategyVersion, [%fos_rest.serializer.exclusion_strategy.version%]]
+            - [setSerializeNullStrategy, [%fos_rest.serializer.serialize_null%]]

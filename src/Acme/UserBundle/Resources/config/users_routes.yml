@@ -1,0 +1,4 @@
+users:
+    type: rest
+    resource: Acme\UserBundle\Controller\UsersController
+
